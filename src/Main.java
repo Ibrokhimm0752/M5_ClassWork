@@ -1,35 +1,39 @@
-import javax.swing.*;
+//import javax.swing.*;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+      //  Scanner in = new Scanner(System.in);
         String menuChoice = "";
-        System.out.println("B-Back \t u-Up \t D-Down \t F-Forward \t Q-Quit \n Choose your move:");
-        menuChoice = in.nextLine();
-        menuChoice = menuChoice.toUpperCase();
+        boolean done = false;
+        do {
 
-        switch (menuChoice) {
-            case "B":
-                System.out.println("You choose Back!");
-                break;
-            case "U":
-                System.out.println("You choose Up!");
-                break;
-            case "D":
-                System.out.println("You choose Down!");
-                break;
-            case "F":
-                System.out.println("You choose Forward!");
-                break;
-            case "Q":
-                System.out.println("You choose Quit!");
-                break;
-            default:
-                System.out.println("Invalid choice! \" + menuChoice + \" must be [B, U, D, F, Q]");
-        }
+            System.out.println("B-Back \t u-Up \t D-Down \t F-Forward \t Q-Quit \n Choose your move:");
+            menuChoice = in.nextLine();
+            menuChoice = menuChoice.toUpperCase();
 
+            switch (menuChoice) {
+                case "B":
+                    System.out.println("You choose Back!");
+                    break;
+                case "U":
+                    System.out.println("You choose Up!");
+                    break;
+                case "D":
+                    System.out.println("You choose Down!");
+                    break;
+                case "F":
+                    System.out.println("You choose Forward!");
+                    break;
+                case "Q":
+                    System.out.println("You choose Quit!");
+                    done = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice! " + menuChoice + " must be [B, U, D, F, Q]");
+            }
 
-        if(menuChoice.equalsIgnoreCase( "B"))
+        } while (!done);
+   /*     if(menuChoice.equalsIgnoreCase( "B"))
         {
             System.out.println("you choose Back!");
         }
@@ -54,7 +58,7 @@ public class Main {
             System.out.println("you choose Quit!");
         }
         else
-            System.out.println("Invalid choice! \" + menuChoice + \" must be [B, U, D, F, Q]");
+           System.out.println("Invalid choice! \" + menuChoice + \" must be [B, U, D, F, Q]");
 
 
     }
